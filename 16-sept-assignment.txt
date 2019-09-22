@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+    char a[20],z,i,j,len1=0,count;
+  
+  printf("enter string");
+ 
+   gets(a);
+    
+for(i=0;a[i]!='\0';i++)
+    
+len1++;
+   
+// printf("%d",len1);
+  
+ for(i=0;a[i]!='\0';i++)
+   
+ {
+       
+ if(a[i]==0)
+        
+continue;
+        
+else
+       
+ z=a[i];
+        
+       
+ count=0;
+        
+for(j=0;j<len1;j++)
+       
+ {
+            
+if(a[j]==z)
+            
+{
+                
+count++;
+               
+ a[j]=0;
+           
+ }
+           
+       
+ }
+        
+printf("%c - %d \n",z,count);
+   
+ }
+    
+
+   
+ return 0;
+
+}

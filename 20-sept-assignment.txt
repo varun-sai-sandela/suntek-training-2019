@@ -1,0 +1,58 @@
+#include<stdio.h>
+
+int rec_gcd(int n,int m)
+
+{
+    
+if(n>=m && n%m==0)
+    
+return m;
+    
+else
+    
+return rec_gcd(m,n%m);
+
+}
+
+int nonrec_gcd(int n,int m)
+
+{
+    int t;
+ 
+   while(m!=0)
+    
+{
+       
+ t=m;
+       
+ m=n%m;
+       
+ n=t;
+    
+}
+    
+return(n);
+
+}
+
+int main()
+
+{
+    
+int n,m,c,d;
+    
+printf("enter numbers");
+    
+scanf("%d%d",&n,&m);
+    
+c=rec_gcd(n,m);
+    
+d=nonrec_gcd(n,m);
+    
+printf("Using recursion gcd is %d\n",c);
+     
+printf("Using nonrecursion gcd is %d",d);
+   
+ return 0;
+
+}

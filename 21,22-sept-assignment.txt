@@ -1,0 +1,110 @@
+#include<stdio.h>
+
+#include<stdlib.h>
+
+struct single
+{
+    
+int data;
+    
+struct single *next;
+
+};
+
+typedef struct single node;
+
+node *start=NULL;
+
+node* getnode()
+
+{
+
+node * newnode;
+
+newnode = (node *) malloc(sizeof(node));
+
+printf("\n Enter data: ");
+
+scanf("%d", &newnode -> data);
+
+newnode -> next = NULL
+;
+return newnode;
+
+}
+void createlist(int n)
+
+{
+int i;
+
+node *newnode;
+
+node *temp;
+
+for(i = 0; i < n; i++)
+
+{
+
+newnode = getnode();
+
+if(start == NULL)
+
+{
+
+start = newnode;
+
+}
+
+else
+
+{
+
+temp = start;
+
+while(temp -> next != NULL)
+
+temp = temp -> next;
+
+temp -> next = newnode;
+
+}
+
+
+}
+
+
+}
+
+int main()
+
+{
+    int n,key,i;
+  
+  node* temp1=start;
+ 
+   printf("\n Number of nodes you want to create: ");
+  
+  scanf("%d", &n);
+   
+ createlist(n);
+    
+    
+printf("\n Number of node to be found from end: ");
+   
+ scanf("%d",&key);
+    
+for(i=1;i<n-key+1;i++)
+  
+  {
+      
+  temp1=temp1->next;
+        
+   
+ }
+   
+ printf("element from %d node from end is %d",key,temp1->data);
+  
+  return 0;
+    
+
+}

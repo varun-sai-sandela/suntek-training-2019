@@ -1,0 +1,88 @@
+#include <stdio.h>
+
+
+int main ()
+
+{
+  char a[20], b[20], i, j, len1 = 0, len2 = 0, found = 0, notfound = 0;
+
+  
+printf ("enter string 1");
+  
+gets (a);
+  
+for (i = 0; a[i] != '\0'; i++)
+    
+len1++;
+  
+printf ("enter string 2");
+  
+gets (b);
+  
+for (i = 0; b[i] != '\0'; i++)
+    
+len2++;
+  if (len1 != len2)
+    
+{
+      printf ("Not anagrams");
+      
+exit (0);
+   
+ }
+  
+else
+    
+{
+      
+for (i = 0; i < len1; i++)
+	
+{
+	  
+found = 0;
+	 
+ for (j = 0; j < len1; j++)
+	    
+{
+	      
+if (a[i] == b[j])
+		
+{
+		  
+found = 1;
+		 
+ break;
+		
+}
+	    
+}
+	  
+if (found == 0)
+	    
+{
+	      
+notfound = 1;
+	      
+break;
+	   
+ }
+	
+}
+      
+if (notfound == 1)
+	
+printf ("\nStrings are not Anagram");
+      
+else
+	
+printf ("\nStrings are Anagram");
+   
+ }
+
+
+
+
+ 
+return 0;
+
+}
